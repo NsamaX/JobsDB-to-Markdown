@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "JobsDB to Markdown",
+  "version": "0.1.0",
+  "description": "Collect job ads from a JobsDB Thailand search and export them as one Markdown file for reading with AI.",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "jobsdb-to-md@local",
+      "strict_min_version": "115.0"
+    }
+  },
+  "permissions": ["storage"],
+  "host_permissions": ["https://th.jobsdb.com/*"],
+  "action": {
+    "default_title": "JobsDB to Markdown",
+    "default_popup": "popup/popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://th.jobsdb.com/*"],
+      "js": ["src/markdown.js", "src/content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

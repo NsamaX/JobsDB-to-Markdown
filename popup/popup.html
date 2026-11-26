@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>JobsDB to Markdown</header>
+  <main>
+    <section class="card">
+      <h2>Search</h2>
+      <p class="hint">Choose the position and how many result pages to collect.</p>
+      <div class="fields">
+        <label class="grow">Position <input id="keywords" type="text" placeholder="Your job title"></label>
+        <label>Pages <input id="pages" type="number" min="1" value="1"></label>
+      </div>
+    </section>
+    <section class="card">
+      <h2>Status</h2>
+      <p id="status" class="hint">Open any th.jobsdb.com page in this tab.</p>
+      <p id="count" class="count"></p>
+    </section>
+  </main>
+  <footer>
+    <button id="clear" class="link">Clear</button>
+    <button id="stop" class="outline">Stop</button>
+    <button id="export" class="outline">Export .md</button>
+    <button id="start" class="primary">Start</button>
+  </footer>
+  <script src="popup.js"></script>
+</body>
+</html>
